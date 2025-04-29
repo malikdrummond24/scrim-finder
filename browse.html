@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browse Scrims</title>
+
+  
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <script defer src="browse.js"></script>
+  <script defer src="auth.js"></script>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h1 class="text-3xl sm:text-4xl font-bold text-center mb-4">Browse Scrims</h1>
+
+    <p id="userEmail" class="text-center text-gray-400 mb-6 text-sm"></p>
+
+    
+<div class="mb-6 flex flex-col md:flex-row md:items-center gap-4">
+    
+    <select id="gameFilter" class="w-full bg-gray-800 text-white px-4 py-2 rounded border border-gray-700">
+      <option value="">All Games</option>
+      <option value="Valorant">Valorant</option>
+      <option value="League of Legends">League of Legends</option>
+      <option value="Marvel Rivals">Marvel Rivals</option>
+    </select>
+  
+    
+    <input id="searchInput" type="text" placeholder="Search Rank, Time, Notes..." 
+      class="w-full bg-gray-800 text-white px-4 py-2 rounded border border-gray-700" />
+  </div>
+
+  
+<div id="toast" class="hidden fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50">
+  Toast message
+</div>
+
+  
+  
+  <button id="toggleMyScrims" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mb-4 w-full">
+    Show My Scrims Only
+  </button>
+  
+  
+  <div class="flex flex-row gap-10 mb-10 justify-center">
+    <a href="index.html" class="w-32 bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded text-center">
+      Post
+    </a>
+    <a id="logoutBtn" href="#" class="w-32 bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-center">
+      Logout
+    </a>
+  </div>
+  
+
+  
+  
+  
+  
+  
+  <div id="scrimList" class="space-y-4"></div>
+  
+    
+    
+
+   
+
+    
+    <div id="scrimList" class="space-y-4"></div>
+  </div>
+</body>
+</html>
